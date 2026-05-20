@@ -1,0 +1,24 @@
+server:
+  port: 8082
+  
+spring:
+  application:
+    name: transaction-service
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    template:
+      default-topic: transaction-events
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/transaction-user
+    username: root
+    password: root
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.MySQL8Dialect
