@@ -13,12 +13,14 @@ spring:
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
 
     properties:
-      spring.json.trusted.packages: "*"
+        spring.json.use.type.headers: false
+        spring.json.value.default.type: com.paypal.notification_service.entity.Transaction
+        spring.json.trusted.packages: "*"
 
   datasource:
     url: jdbc:mysql://localhost:3306/notification-user
-    username: root
-    password: root
+    username: {name}
+    password: {pass}
 
   jpa:
     hibernate:

@@ -15,8 +15,8 @@ spring:
 
   datasource:
     url: jdbc:mysql://localhost:3306/transaction-user
-    username: root
-    password: root
+    username: {user}
+    password: {pass}
 
   jpa:
     hibernate:
